@@ -21,7 +21,6 @@ iface eth0 inet dhcp
 auto lo
 iface lo loopback
     address 127.0.0.1/32
-    vrf mgmt
 
 # Front panel ports
 auto swp1
@@ -44,7 +43,4 @@ iface bridge
 # VLAN intervaces (SVI)
 auto bridge.1
 iface bridge.1 inet dhcp
-
-#auto bridge.1
-#iface bridge.1 inet6 ???    
-
+    post-up sysctl -w net.ipv6.conf.$IFACE.accept_ra=2
