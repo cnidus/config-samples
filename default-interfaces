@@ -38,6 +38,7 @@ iface bridge
     bridge-vlan-aware yes
     bridge-vids 1-2000
     bridge-pvid 1
+    bridge-ports glob swp1-54
     bridge-stp on
 
 # VLAN intervaces (SVI)
